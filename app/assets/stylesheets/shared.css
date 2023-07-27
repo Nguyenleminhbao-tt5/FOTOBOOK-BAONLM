@@ -278,7 +278,7 @@ transition: 0.4s;
     top: -20px;
 }
 .profileTopInfor__edit{
-    width: 100px;
+    
     text-align: center;
     border-radius: 10px;
     font-weight: 600;
@@ -286,6 +286,7 @@ transition: 0.4s;
     border: 2px solid var(--primary-color);
     position: absolute;
     top: -20px;
+    padding: 3px 7px;
 }
 .profileTopInfor__name{
     font-weight: 700;
@@ -548,7 +549,8 @@ background-color: red;
     background-color: var(--primary-color);
     color: white;
     border-radius: 10px;
-    margin: 20px;
+    border-top-right-radius: 10px;
+    border-bottom-right-radius: 10px;
     width: 320px !important;
 }
 .offcanvas-title{

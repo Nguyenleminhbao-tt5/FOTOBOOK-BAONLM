@@ -51,6 +51,7 @@ gem 'hotwire-rails'
 gem 'cloudinary'
 gem 'fog-aws'
 gem "noticed", "~> 1.6"
+gem 'dotenv-rails'
 
 # Use Sass to process CSS
 # gem "sassc-rails"

@@ -11,13 +11,15 @@ default: &default
   timeout: 5000
 
 development:
-  adapter: postgresql
-  encoding: unicode
-  database: MyDatabase
-  host: localhost
-  pool: 5
-  username: postgres
-  password: 311202@Bao   
+  <<: *default
+  url: <%= ENV['DATABASE_URL'] %>
+  # adapter: postgresql
+  # encoding: unicode
+  # database: MyDatabase
+  # host: localhost
+  # pool: 5
+  # username: postgres
+  # password: 311202@Bao   
 
 # Warning: The database defined as "test" will be erased and
 # re-generated from your development database when you run "rake".
