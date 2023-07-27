@@ -27,6 +27,8 @@ test:
   database: db/test.sqlite3
 
 production:
+  <<: *default
+  url: <%= ENV['DATABASE_URL'] %>
   adapter: postgresql
   encoding: unicode
   database: MyDatabase_Production
@@ -35,4 +37,3 @@ production:
   username: postgres
   password: <%= ENV['MyDatabase_Password'] %>
   role: MyRole
-  url: <%= ENV['DATABASE_URL'] %>

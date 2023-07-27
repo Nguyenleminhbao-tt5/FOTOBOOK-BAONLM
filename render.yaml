@@ -1,0 +1,27 @@
+databases:
+  - name: postgresql
+    databaseName: MyDatabase
+    user: postgres
+
+services:
+  - type: web
+    name: Fotobook
+    runtime: ruby
+    buildCommand: "./bin/render-build.sh"
+    startCommand: "bundle exec puma -C config/puma.rb"
+    envVars:
+      - key: DATABASE_URL
+        fromDatabase:
+          name: postgresql
+          property: connectionString
+      - key: RAILS_MASTER_KEY
+        sync: false
+
+
+  # adapter: postgresql
+  # encoding: unicode
+  # database: MyDatabase
+  # host: localhost
+  # pool: 5
+  # username: postgres
+  # password: 311202@Bao   
