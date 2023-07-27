@@ -1,0 +1,79 @@
+current directory: /home/nguyenleminhbao/Code/BaoNLM/migrate_exercises/HistoryMigration/vendor/bundle/ruby/3.2.0/gems/ovirt-engine-sdk-4.4.1/ext/ovirtsdk4c
+/home/nguyenleminhbao/.rbenv/versions/3.2.2/bin/ruby extconf.rb
+checking for xml2-config... yes
+checking for curl-config... yes
+creating Makefile
+
+current directory: /home/nguyenleminhbao/Code/BaoNLM/migrate_exercises/HistoryMigration/vendor/bundle/ruby/3.2.0/gems/ovirt-engine-sdk-4.4.1/ext/ovirtsdk4c
+make DESTDIR\= sitearchdir\=./.gem.20230726-18618-xc3pkv sitelibdir\=./.gem.20230726-18618-xc3pkv clean
+
+current directory: /home/nguyenleminhbao/Code/BaoNLM/migrate_exercises/HistoryMigration/vendor/bundle/ruby/3.2.0/gems/ovirt-engine-sdk-4.4.1/ext/ovirtsdk4c
+make DESTDIR\= sitearchdir\=./.gem.20230726-18618-xc3pkv sitelibdir\=./.gem.20230726-18618-xc3pkv
+compiling ov_error.c
+compiling ov_http_client.c
+ov_http_client.c: In function ‘ov_http_client_log_info’:
+ov_http_client.c:147:13: warning: function ‘ov_http_client_log_info’ might be a candidate for ‘gnu_printf’ format attribute [-Wsuggest-attribute=format]
+  147 |             message = rb_vsprintf(format, args);
+      |             ^~~~~~~
+ov_http_client.c: In function ‘ov_http_client_log_warn’:
+ov_http_client.c:163:13: warning: function ‘ov_http_client_log_warn’ might be a candidate for ‘gnu_printf’ format attribute [-Wsuggest-attribute=format]
+  163 |             message = rb_vsprintf(format, args);
+      |             ^~~~~~~
+ov_http_client.c: At top level:
+ov_http_client.c:216:29: warning: excess elements in array initializer
+  216 |         .reserved = { NULL, NULL }
+      |                             ^~~~
+ov_http_client.c:216:29: note: (near initialization for ‘ov_http_client_type.function.reserved’)
+ov_http_client.c: In function ‘ov_http_client_header_task’:
+ov_http_client.c:392:33: warning: comparison of integer expressions of different signedness: ‘long int’ and ‘size_t’ {aka ‘long unsigned int’} [-Wsign-compare]
+  392 |         while (pointer - buffer < length && isspace(*pointer)) {
+      |                                 ^
+ov_http_client.c: In function ‘ov_http_client_wait_task’:
+ov_http_client.c:845:23: warning: implicit conversion from ‘CURLMcode’ to ‘CURLcode’ [-Wenum-conversion]
+  845 |     context_ptr->code = curl_multi_wait(context_ptr->handle, NULL, 0, timeout, NULL);
+      |                       ^
+ov_http_client.c:866:23: warning: implicit conversion from ‘CURLMcode’ to ‘CURLcode’ [-Wenum-conversion]
+  866 |     context_ptr->code = curl_multi_perform(context_ptr->handle, &pending);
+      |                       ^
+ov_http_client.c: In function ‘ov_http_client_prepare_handle’:
+ov_http_client.c:1001:47: warning: passing argument 2 of ‘rb_hash_foreach’ from incompatible pointer type [-Wincompatible-pointer-types]
+ 1001 |         rb_hash_foreach(request_ptr->headers, ov_http_client_add_header, (VALUE) headers);
+      |                                               ^~~~~~~~~~~~~~~~~~~~~~~~~
+      |                                               |
+      |                                               int (*)(VALUE,  VALUE,  struct curl_slist **) {aka int (*)(long unsigned int,  long unsigned int,  struct curl_slist **)}
+In file included from /home/nguyenleminhbao/.rbenv/versions/3.2.2/include/ruby-3.2.0/ruby/internal/scan_args.h:37,
+                 from /home/nguyenleminhbao/.rbenv/versions/3.2.2/include/ruby-3.2.0/ruby/ruby.h:47,
+                 from /home/nguyenleminhbao/.rbenv/versions/3.2.2/include/ruby-3.2.0/ruby.h:38,
+                 from ov_http_client.c:17:
+/home/nguyenleminhbao/.rbenv/versions/3.2.2/include/ruby-3.2.0/ruby/internal/intern/hash.h:83:40: note: expected ‘int (*)(VALUE,  VALUE,  VALUE)’ {aka ‘int (*)(long unsigned int,  long unsigned int,  long unsigned int)’} but argument is of type ‘int (*)(VALUE,  VALUE,  struct curl_slist **)’ {aka ‘int (*)(long unsigned int,  long unsigned int,  struct curl_slist **)’}
+   83 | void rb_hash_foreach(VALUE hash, int (*func)(VALUE key, VALUE val, VALUE arg), VALUE arg);
+      |                                  ~~~~~~^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+ov_http_client.c: In function ‘ov_http_client_send’:
+ov_http_client.c:1092:34: warning: comparison of integer expressions of different signedness: ‘size_t’ {aka ‘long unsigned int’} and ‘int’ [-Wsign-compare]
+ 1092 |     if (RHASH_SIZE(ptr->pending) < ptr->limit) {
+      |                                  ^
+ov_http_client.c: In function ‘ov_http_client_wait’:
+ov_http_client.c:1118:71: warning: comparison of integer expressions of different signedness: ‘size_t’ {aka ‘long unsigned int’} and ‘int’ [-Wsign-compare]
+ 1118 |         while (RARRAY_LEN(ptr->queue) > 0 && RHASH_SIZE(ptr->pending) < ptr->limit) {
+      |                                                                       ^
+ov_http_client.c: At top level:
+cc1: note: unrecognized command-line option ‘-Wno-self-assign’ may have been intended to silence earlier diagnostics
+cc1: note: unrecognized command-line option ‘-Wno-parentheses-equality’ may have been intended to silence earlier diagnostics
+cc1: note: unrecognized command-line option ‘-Wno-constant-logical-operand’ may have been intended to silence earlier diagnostics
+compiling ov_http_request.c
+ov_http_request.c:75:29: warning: excess elements in array initializer
+   75 |         .reserved = { NULL, NULL }
+      |                             ^~~~
+ov_http_request.c:75:29: note: (near initialization for ‘ov_http_request_type.function.reserved’)
+ov_http_request.c: In function ‘ov_http_request_define’:
+ov_http_request.c:347:77: error: ‘rb_cData’ undeclared (first use in this function)
+  347 |     ov_http_request_class = rb_define_class_under(ov_module, "HttpRequest", rb_cData);
+      |                                                                             ^~~~~~~~
+ov_http_request.c:347:77: note: each undeclared identifier is reported only once for each function it appears in
+ov_http_request.c: At top level:
+cc1: note: unrecognized command-line option ‘-Wno-self-assign’ may have been intended to silence earlier diagnostics
+cc1: note: unrecognized command-line option ‘-Wno-parentheses-equality’ may have been intended to silence earlier diagnostics
+cc1: note: unrecognized command-line option ‘-Wno-constant-logical-operand’ may have been intended to silence earlier diagnostics
+make: *** [Makefile:248: ov_http_request.o] Error 1
+
+make failed, exit code 2

@@ -1,0 +1,60 @@
+<div class="contentProfile col-xl-2 col-xl-8 col-md-9">
+
+    <div class="editProfile w-100 h-100 d-flex flex-column justify-content-start">
+        <div class="newPhoto__heading d-flex align-items-center justify-content-between">
+            <h2 class="newPhoto__heading-text">Edit User Profile</h2>
+            <%= link_to 'Back', admin_users_path , class: 'btn newPhoto__heading-back text-decoration-none' %>
+        </div>
+        
+        <span class="newPhoto__arrow w-100 d-block"></span>
+        <div class="d-flex flex-column justify-content-center align-items-center w-100 ">
+            <%= form_with model: @user, url: admin_user_path(@user), method: :patch, class: 'editProfile__infor', local: true do |f| %>
+                <div class="editProfile__img d-flex justify-content-center align-items-center w-100 mb-3 " data-controller="change">
+                    <% if @user.avatar.present? %>
+                        <%= image_tag(@user.avatar.url, class: 'editProfile__img-img h-100')  %>
+                    <%else%>
+                        <img class="editProfile__img-img h-100" src="https://i.pinimg.com/564x/a6/de/32/a6de325e4daf6807b8dbae3a5557ff3c.jpg" alt="" />
+                     <%end%>
+                    <label class="editProfile__img-change btn" for="avatarProfile" > Change </label>
+                </div>
+       
+                <%= f.file_field :avatar, class: 'd-none', id: 'avatarProfile' %>
+                <h5 class="editProfile__infor-heading">Basic Information</h5>
+                    <div class="mb-3 row">
+                        <label for="staticEmail" class="col-sm-4 col-form-label">First Name</label>
+                        <div class="col-sm-8">
+                            <%= f.text_field :fname,class:"form-control",autofocus: true, placeholder:"First Name"%>
+                        </div>
+                    </div>
+                    <div class="mb-3 row">
+                        <label for="staticEmail" class="col-sm-4 col-form-label">Last Name</label>
+                        <div class="col-sm-8">
+                            <%= f.text_field :lname,class:"form-control", placeholder:"Last Name"%>
+                        </div>
+                    </div>
+                    <div class="mb-3 row">
+                        <label for="staticEmail" class="col-sm-4 col-form-label">Email</label>
+                        <div class="col-sm-8">
+                            <%= f.email_field :email,class:"form-control", placeholder:"someone@gmail.com"%>
+                        </div>
+                    </div>
+                    <div class="mb-3 row">
+                        <label for="staticEmail" class="col-sm-4 col-form-label">Current Password</label>
+                        <div class="col-sm-8">
+                            <%= f.password_field :password,class:'form-control', autocomplete: "current-password" %>
+                        </div>
+                    </div>
+                    <div class="mb-3 row">
+                        <label for="staticEmail" class="col-sm-4 col-form-label">Active</label>
+                        <div class="col-sm-8 mt-1">
+                            <%= f.check_box :active,class: "form-check-input", checked: true %>
+                        </div>
+                    </div>
+           
+
+                    <%= f.submit "Save", class:'btn newPhoto__submit btn-success' %>
+            <%end%>
+        </div>        
+    </div>
+</div>
+

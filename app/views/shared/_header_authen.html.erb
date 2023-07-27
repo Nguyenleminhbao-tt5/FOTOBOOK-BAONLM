@@ -1,0 +1,13 @@
+ <header class="header fixed-top d-flex align-items-center justify-content-between ">
+    <div class="header__left d-flex align-items-center ">
+        <button class="header__left-bar btn  bg-transparent border-0" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasExample" aria-controls="offcanvasExample">
+                <i class=" bar-icon mt-1 fa-solid fa-bars " ></i>
+        </button>
+        <%= link_to 'Fotobook', root_path, class: 'header__left-logo text-white fw-bold text-decoration-none' %>
+        <input class="header__left-search" placeholder="Search Photo / Album">
+
+    </div>
+    <div class="header__right d-flex align-items-center ">
+        <%= link_to 'Login', login_path, class:'header__right-logout text-white fw-bold text-decoration-none' %>
+    </div>
+</header>

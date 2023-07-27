@@ -1,0 +1,22 @@
+<div class="contentProfile col-12 col-lg-9 col-xl-8 mb-4" >
+    <div class="contentProfile__top ">
+        <%=render "shared/personal_profile"%>
+
+    </div>
+    <div class="contentProfile__bot">
+        <div class="row">
+            <% @list_photo.find_each do |ele| %>
+                <% if @infors[0] == current_user %>
+                    <%= render partial: "components/card_img_profile", locals: {user: @infors[0], photo: ele}%>
+                <% elsif ele.mode == 'Public' %>
+                    <%= render partial: "components/card_img_profile", locals: {user:@infors[0],  photo: ele}%>
+                <%end%>
+            <%end%>
+        </div>
+
+    </div>
+    <div class="d-flex justify-content-center">
+        <%=  pagy_bootstrap_nav(@pagy).html_safe if @pagy.pages > 1 %>
+    </div>
+   
+</div>

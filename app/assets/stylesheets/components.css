@@ -1,0 +1,328 @@
+
+/*===================CARD-IMG=======================*/
+.cardImg{
+    border: 1px solid rgb(197, 190, 190);
+    background-color: var(--card-color);
+    padding: 10px;
+    border-radius: 10px;
+    height: 270px;
+    margin: 20px 10px;
+    max-width: 500px;
+    width: 100%;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+    position: relative;
+    top: 0;
+    transition: top ease 0.1s ;
+    cursor: pointer;
+}
+.cardImg__right-account__name{
+    width: 120px; 
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+.cardImg:hover{
+    top:-3px;
+  
+}
+.cardImgBorder{
+    /* border: 1px solid black; */
+    height: 100%;
+}
+.cardImg__left{
+   
+}
+.cardIMg__left-img{
+    border-radius: 10px;
+    box-shadow: 2px 5px 12px rgba(0, 0, 0, 0.3);
+}
+.cardImg__right{
+   
+}
+.cardImg__right-account__avatar{
+
+    width: 40px;
+    height: 40px;
+    border: 1px solid var(--primary-color);
+}
+.cardImg__right-account__name {
+    color: var(--primary-color);
+    font-size: 18px;
+}
+.cardImg__right-heading{
+    font-size: 20px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+.cardImg__right-text{
+    color: var(--text-card-color);
+}
+.cardImg__right-footer{
+    width: calc(100% - 25px);
+}
+.cardImg__right-footer__btn{
+    cursor: pointer;
+    font-size: 19px;
+    color: var(--primary-color); 
+}
+.like{
+    color: var(--primary-color); 
+}
+.dislike{
+    color: #d4cfcf;
+}
+
+
+.cardImg__right-footer__time{
+    color:#4d4a4a;
+}
+#checkHeart:checked ~ .heart-icon{
+    color: var(--primary-color);
+}
+
+.cardImg__btn-follow{
+    border: none;
+    width: 60px;
+    height: 28px;
+    font-size: 13px;
+    border: 3px solid;
+    background: linear-gradient(90deg, rgba(131,58,180,1) 0%, rgba(253,104,29,1) 50%, rgba(252,176,69,1) 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    border-image: linear-gradient(90deg, rgba(131,58,180,1) 0%, rgba(253,104,29,1) 50%, rgba(252,176,69,1) 100%) 1;
+    border-radius: 15px;
+
+}
+.cardImg__btn-following{
+    border: none;
+    width: 70px;
+    height: 28px;
+    color: white;
+    font-size: 13px;
+    background: linear-gradient(90deg, rgba(131,58,180,1) 0%, rgba(253,104,29,1) 50%, rgba(252,176,69,1) 100%);
+    border-image: linear-gradient(90deg, rgba(131,58,180,1) 0%, rgba(253,104,29,1) 50%, rgba(252,176,69,1) 100%) 1;
+    border-radius: 15px;
+
+}
+
+.card{
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+    max-width: 500px;
+    height: 600px;
+    width: 100%;
+}
+
+.card-img-top{
+    height: 400px;
+    padding: 10px;
+}
+.card-title{
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+.card-text{
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+/*===================CARD-IMG-PROFILE=======================*/
+.cardImgProfile{
+    margin: 10px 0;
+}
+
+.cardImgProfile__img{
+    height: var(--height-card-profile);
+    box-shadow: 0 5px 5px rgba(0, 0, 0, 0.3);
+    border-radius: 10px;
+    position: relative;
+}
+.cardImgProfile__title{
+    display: block;
+    text-align: center;
+    margin-top: 10px;
+    color:#b4b2b2;
+    font-size: 18px;
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+}
+.cardFollow__btn-follow{
+    border: none;
+    width: 100px;
+    height: 30px;
+    border: 3px solid;
+    margin-top: 10px;
+    background: linear-gradient(90deg, rgba(131,58,180,1) 0%, rgba(253,104,29,1) 50%, rgba(252,176,69,1) 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    border-image: linear-gradient(90deg, rgba(131,58,180,1) 0%, rgba(253,104,29,1) 50%, rgba(252,176,69,1) 100%) 1;
+    border-radius: 15px;
+
+}
+.cardImgProfile__editBtn{
+    position: absolute;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0, 0, 0, 0.3);
+    color: white;
+    padding: 3px 8px;
+    border-radius: 10px;
+
+}
+.cardImgProfile__lock{
+    position: absolute;
+    right: 5px;
+    top: 5px;
+    background-color:white;
+    box-shadow: 0 5px 5px rgba(0, 0, 0, 0.3);
+    width: 40px;
+    height: 40px;
+}
+.lock-icon{
+    font-size: 20px;
+}
+.cardFollow__btn-following{
+    border: none;
+    width: 110px;
+    height: 30px;
+    margin-top: 10px;
+    color: white;
+    background: linear-gradient(90deg, rgba(131,58,180,1) 0%, rgba(253,104,29,1) 50%, rgba(252,176,69,1) 100%);
+    border-image: linear-gradient(90deg, rgba(131,58,180,1) 0%, rgba(253,104,29,1) 50%, rgba(252,176,69,1) 100%) 1;
+    border-radius: 15px;
+
+}
+
+
+
+
+/*===================CARD-ALBUM-PROFILE=======================*/
+.cardAlbumProfile{
+    margin: 10px 0;
+}
+
+.cardAlbumProfile__img{
+    height: var(--height-card-profile);
+    box-shadow: 0 5px 5px rgba(0, 0, 0, 0.3);
+    border-radius: 10px;
+}
+.cardAlbumProfile__img-img{
+    border-radius: 10px;
+}
+.cardAlbumProfile__title{
+    display: block;
+    text-align: center;
+    margin-top: 10px;
+    color:#b4b2b2;
+    font-size: 18px;
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+}
+.cardAlbumProfile__img-amount{
+    position: absolute;
+    background-color: rgba(0, 0, 0, 0.4);
+    height: 80px;
+    width: 80px;
+    color: white;
+    top: calc(50% - 40px);
+    left: calc(50% - 40px);
+
+}
+.cardAlbumProfile__lock{
+    position: absolute;
+    right: 5px;
+    top: 5px;
+    background-color:white;
+    box-shadow: 0 5px 5px rgba(0, 0, 0, 0.3);
+    width: 40px;
+    height: 40px;
+}
+
+
+
+/*===================CARD-FOLLOW-PROFILE=======================*/
+
+.cardFollow{
+    margin: 10px 0;
+    background-color: #f1f0f0;
+    height: var(--height-card-follow);
+    box-shadow: 0 5px 5px rgba(0, 0, 0, 0.3);
+    border-radius: 10px;
+    max-width: 300px;
+}
+.cardFollow__img{
+    width: 120px;
+    height: 120px;
+    box-shadow: 0 5px 5px rgba(0, 0, 0, 0.3);
+}
+.cardFollow__name{
+    font-size: 25px;
+
+}
+.cardFollowInfor__amount{
+    color: var(--primary-color);
+    font-weight: 600;
+    font-size: 30px;
+}
+.cardFollowInfor__cate{
+    color: var(--primary-color);
+}
+
+/*===================CARD-PHOTO-ADMIN=======================*/
+
+.cardPhotoAdmin{
+    margin: 10px 0;
+    max-width: 350px;
+
+}
+.cardPhotoAdmin__heading{
+    position: absolute;
+    top: 0;
+    width: 100%;
+    z-index: 1;
+    height: 35px;
+    overflow: hidden;
+    background-color: rgba(0, 0, 0, 0.3);
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+    padding: 5px;
+    padding-left: 10px;
+ 
+}
+.cardPhotoAdmin__heading-title{
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    color: white;
+    font-size: 18px;
+    font-weight: 400;
+    
+}
+.cardPhotoAdmin__heading-edit{
+    color: white;
+    font-size: 22px;
+}
+.cardPhotoAdmin__heading-edit:hover{
+    filter: brightness(80%);
+}
+.cardPhotoAdmin__img{
+    height: 250px;
+    box-shadow: 0 5px 5px rgba(0, 0, 0, 0.3);
+    border-radius: 10px;
+    position: relative;
+}
+
+/*===================TOAST-MESSAGE=======================*/
+.toast:not(.show) {
+    display: block;
+}
+.toast-container{
+    width: 300px !important;
+}
+.toast-icon{
+    font-size: 20px;
+}

@@ -1,0 +1,42 @@
+
+<div class="contentFoto col-12 col-lg-9 col-xl-10 col-xxl-8">
+    <div class="contentFoto__heading mb-2 d-flex justify-content-center">
+        <div class="btn-group contentFoto__heading-group " role="group" aria-label="Basic radio toggle button group" data-controller = 'toggle' data-photo-checked='<%= params[:category] %>'>
+            <input type="radio" class="btn-check" name="btnradio" id="btnradio1" autocomplete="off" checked>
+            <label class="btn btn-outline-primary btn-Photo px-0" for="btnradio1" >
+                <%= link_to 'Photo', root_path , class: 'text-decoration-none p-3'%>
+            </label>
+            
+            <input type="radio" class="btn-check" name="btnradio" id="btnradio2" autocomplete="off"  >
+            <label class="btn btn-outline-primary btn-Album px-0" for="btnradio2">
+                <%= link_to 'Album', home_feed_path('album') , class: 'text-decoration-none p-3'%>
+            </label>
+        </div>
+    </div>
+    <div class="row contentFoto__body " >
+
+        <% if params[:category] == nil or params[:category] == 'photo' %>
+            <% @list_photo.find_each do |photo|%>
+                <% if photo.mode== 'Public' and photo.user != current_user %>
+                    <% like_photos = photo.like_photos %>
+                    <% is_like = user_signed_in? ? like_photos.find_by(user_id: current_user) :false %>
+                    <%= render partial:'components/card_img', locals: { user: photo.user, photo: photo, is_like: is_like, like_size: like_photos.size }%>
+                <%end%>
+            <%end%>
+        <%elsif params[:category] == 'album' %>
+            <% @list_album.find_each do |album| %>
+                <% if album.mode== 'Public' and album.user != current_user %>
+                    <% like_albums = album.like_albums %>
+                    <% is_like = user_signed_in? ? like_albums.find_by(user_id: current_user): false %>
+                    <%= render partial: 'components/card_album', locals: {user: album.user, album: album, is_like: is_like, like_size: like_albums.size }%>
+                <%end%>
+            <%end%>
+        <%end%>
+        
+    </div>
+   
+    <div class="contentFoto__footer mt-3 d-flex justify-content-center">
+        <%=  pagy_bootstrap_nav(@pagy).html_safe if @pagy.pages > 1 %>
+    </div>
+</div>
+

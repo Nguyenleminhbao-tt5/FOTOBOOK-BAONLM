@@ -1,0 +1,44 @@
+<div class="offcanvas offcanvas-start" tabindex="-1" id="offcanvasExample" aria-labelledby="offcanvasExampleLabel">
+    <div class="offcanvas-header">
+        <h2 class="offcanvas-title" id="offcanvasExampleLabel">Fotobook</h2>
+        <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+    </div>
+    <span class="offcanvas__arrow"></span>
+    <div class="offcanvas-body position-relative p-0">
+        <ul class="offcanvasBody__list list-unstyled d-flex flex-column justify-content-start mt-4" data-controller="toggle" data-left-sidebar="<%= params[:action]%>"  >
+            <li class="offcanvasBody__list-item  text-start ms-4 "  >
+                <i class="fa-solid fa-image mx-2 icon-offcanvas"></i>
+                <%= link_to 'Feeds', root_path, class:'offcanvasBodyList__link active text-decoration-none fw-bold' %>
+            </li>
+            <li class="offcanvasBody__list-item  text-start ms-4">
+                <i class="fa-solid fa-images mx-2 icon-offcanvas"></i>
+                <%= link_to 'Discover', home_discover_path('photo'), class: 'offcanvasBodyList__link  text-decoration-none fw-bold' %>
+            </li>
+            <li class="offcanvasBody__list-item  text-start ms-4">
+                <button type="button" class="offcanvasBodyList__link bg-transparent border-0 fw-bold" data-bs-toggle="modal" data-bs-target="#exampleModal">
+                <i class="fa-solid fa-arrow-right-from-bracket mx-2 icon-offcanvas"></i>
+                Logout
+            </button>
+            </li>
+        </ul>
+        <div class="offcanvasBody__footer">
+            <%if user_signed_in?%>
+                <div class="header__right-account d-flex align-items-center d-none d-sm-flex ">
+                    <%= link_to photos_user_path(current_user) do%>
+                        <% if current_user.avatar.present? %> 
+                            <%= image_tag(current_user.avatar.url, class: 'headerRightAccount__avatar rounded-circle')  %>
+                        <%else%>
+                            <img  src="https://i.pinimg.com/originals/aa/be/6d/aabe6d6db5e5f569e69e56e851eba8f0.gif" alt="" class="headerRightAccount__avatar rounded-circle "/>
+                        <%end%>
+                    <%end%>
+                    <span class="headerRightAccount__name text-white fw-bold"><%= current_user.fullname %></span>
+                </div>
+            <%else%>
+                <div class="header__right d-flex align-items-center justify-content-center ">
+                <%= link_to 'Login', login_path, class:'header__right-logout text-white fw-bold text-decoration-none' %>
+                </div>
+            <%end%>
+        </div>
+    </div>
+</div>
+     

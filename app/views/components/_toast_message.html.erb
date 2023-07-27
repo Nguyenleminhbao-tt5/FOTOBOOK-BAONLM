@@ -1,0 +1,17 @@
+<div class="toast-container position-fixed top-0 end-0 p-3 mt-5"  data-controller= "toast" >
+    <div id="liveToast" class="toast text-bg-<%= type%>" role="alert" aria-live="assertive" aria-atomic="true" data-bs-delay="3000">
+        <div class="toast-header">
+        <strong class="me-auto">Notification!</strong>
+        <button type="button" class="btn-close" data-bs-dismiss="toast" aria-label="Close"></button>
+        </div>
+        <div class="toast-body">
+            <%if type == 'danger'%>
+                <i class="toast-icon fa-solid fa-triangle-exclamation me-2"></i></i> <%= message%>
+            <%elsif type == 'success' %>
+                <i class="toast-icon fa-regular fa-circle-check me-2"></i> <%= message%>
+            <%end%>
+        </div>
+    </div>
+</div>
+
+

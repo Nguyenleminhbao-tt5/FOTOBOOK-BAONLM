@@ -1,0 +1,63 @@
+
+.contentFoto{
+    margin: 25px 0 10px 0;
+    border-radius: 20px;
+    background-color: white;
+    min-height: 100%;
+}
+.contentFoto__heading{
+    margin-top: 30px;
+}
+.contentFoto__heading-group{
+    border: none !important;
+}
+.btn-Photo,.btn-Album{
+    font-weight: 600 !important;
+}
+
+.contentFoto__body{
+    padding: 0 20px;
+
+}
+
+
+
+
+
+
+.sidebarLeft{
+    height: 100%;
+    margin-top: var(  --height-header);
+    position: fixed;
+    z-index: 1;
+    top: 0;
+    left: 0;
+    background-color: #F8F8F8;
+
+    
+}
+.sidebarRight{
+    height: 100%;
+    margin-top: var(  --height-header);
+    position: fixed;
+    z-index: 1;
+    top: 0;
+    right: 0;
+    background-color: #F8F8F8;
+}
+
+.sidebarLeft__list-item
+{
+    margin: 10px 0 ;
+    cursor: pointer;
+    font-size: 18px;
+}
+.sidebarLeftListItem__link{
+    color: var(--text-sidebar-color);
+   
+}
+.active{
+    color: var(--text-acive-color);
+}
+
+

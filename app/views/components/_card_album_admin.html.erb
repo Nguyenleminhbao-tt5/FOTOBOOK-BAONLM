@@ -1,0 +1,11 @@
+<div class="col-xl-3 col-md-6 col-12">
+    <div class="cardPhotoAdmin position-relative my-3">
+        <div class="cardPhotoAdmin__heading d-flex justify-content-between">
+            <h3 class="cardPhotoAdmin__heading-title"><%= album.title%></h3>
+            <%= link_to  edit_album_path(album), class:'cardPhotoAdmin__heading-edit bg-transparent border-0 text-decoration-none d-flex justify-content-between align-items-center' do %>
+              <i class="fa-regular fa-pen-to-square"></i>
+            <%end%>
+        </div>
+        <%= image_tag(album.list_image[0].url,class:'cardImgProfile__img cardPhotoAdmin__img w-100') %>
+    </div>
+</div>

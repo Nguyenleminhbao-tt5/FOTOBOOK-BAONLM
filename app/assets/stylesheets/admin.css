@@ -1,0 +1,81 @@
+/*===================MANAGE-USER=======================*/
+.manageUser{
+  overflow-x: auto;
+  width: 1200px;
+}
+
+
+.manageUser__table{
+  margin: 20px 15px;
+  width: 96%;
+
+
+}
+
+.manageUser__table-heading{
+  border-bottom: 2px solid rgb(110, 109, 109);
+  margin-bottom: 10px;
+  font-size: 20px;
+  height: 40px;
+}
+
+.manageUserBody__element{
+  margin: 10px 0;
+  height: 50px;
+  font-size: 18px;
+}
+.container{
+  padding: 1rem;
+  margin: 1rem;
+}
+.table-scroll{
+
+
+}
+
+.table-scroll thead{
+  border-bottom: 2px solid rgb(110, 109, 109);
+  margin-bottom: 10px;
+  font-size: 20px;
+  height: 40px;
+}
+
+.table-scroll tbody{
+  /* Position */
+  display: block; 
+  position:relative;
+  width:100%; overflow-y:scroll;
+  /* Decoration */
+  border-top: 1px solid rgba(0,0,0,0.2);
+}
+
+.table-scroll tr{
+  width: 100%;
+  display:flex;
+}
+
+.table-scroll td,.table-scroll th{
+  flex-basis:100%;
+  flex-grow:2;
+  display: block;
+  padding: 10px;
+  text-align:left;
+}
+
+/* Other options */
+
+.table-scroll.small-first-col td:first-child,
+.table-scroll.small-first-col th:first-child{
+  flex-basis:20%;
+  flex-grow:1;
+}
+
+.table-scroll tbody tr:nth-child(2n){
+  background-color: rgba(130,130,170,0.1);
+}
+
+.body-half-screen{
+  max-height: 70vh;
+}
+
+.small-col{flex-basis:10%;}

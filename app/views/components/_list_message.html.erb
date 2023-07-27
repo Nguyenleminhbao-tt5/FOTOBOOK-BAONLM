@@ -1,0 +1,15 @@
+<div id= "list_message">        
+    <%list_message.each do |message|%>
+        <article class="msg-container msg-remote " id="msg-0">
+            <div class="msg-box">
+                <img class="user-img" id="user-0" src="<%= message.user.avatar.url(:thumb1) %>" />
+                <div class="flr">
+                    <div class="messages">
+                        <p class="msg" id="msg-0"><%= message.body %></p>
+                    </div>
+                    <span class="timestamp"><span class="username"><%= message.user.fname %></span>&bull;<span class="posttime"><%= message.created_at %></span></span>
+                </div>
+            </div>
+        </article>
+    <%end%>
+</div>
