@@ -2,7 +2,11 @@
     <%list_message.each do |message|%>
         <article class="msg-container msg-remote " id="msg-0">
             <div class="msg-box">
-                <img class="user-img" id="user-0" src="<%= message.user.avatar.url(:thumb1) %>" />
+                <% if message.user.avatar.present? %>
+                    <img class="user-img" id="user-0" src="<%= message.user.avatar.url(:thumb1) %>" />
+                <%else%>
+                    <img class="user-img" id="user-0" src="https://i.pinimg.com/originals/aa/be/6d/aabe6d6db5e5f569e69e56e851eba8f0.gif" />
+                <%end%>
                 <div class="flr">
                     <div class="messages">
                         <p class="msg" id="msg-0"><%= message.body %></p>
