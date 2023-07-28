@@ -6,5 +6,5 @@ CarrierWave.configure do |config|
       aws_secret_access_key: ENV['SECRET_ACCESS_KEY'],                        # required unless using use_iam_profile
       region:                'ap-southeast-1',                  # optional, defaults to 'us-east-1
     }
-    config.fog_directory  = 'bucket-fotobok'                                      # required
+    config.fog_directory  = 'bucket-fotobook'                                      # required
 end
