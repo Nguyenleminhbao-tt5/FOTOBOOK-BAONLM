@@ -49,9 +49,9 @@ gem 'pagy'
 gem 'mini_magick'
 gem 'hotwire-rails'
 gem 'cloudinary'
-gem 'fog-aws'
 gem "noticed", "~> 1.6"
 gem 'dotenv-rails'
+gem "fog-aws"
 
 # Use Sass to process CSS
 # gem "sassc-rails"
