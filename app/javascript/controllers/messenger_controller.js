@@ -19,11 +19,17 @@ export default class extends Controller {
         document.getElementById("myForm").style.display = "none";
     })
 
-    document.querySelector('.submit-message').addEventListener('click',()=>{
+    document.querySelector('.submit-message').addEventListener('click',(e)=>{
       let message= document.querySelector('.messenger-input');
-      scrollToBottom();
-
-
+      if (message.value=='') {
+        e.preventDefault();
+      }
+      else{
+        setTimeout(()=>{
+          message.value='';
+        },500)
+        scrollToBottom();
+      }
       
     })
 

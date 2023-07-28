@@ -33,7 +33,6 @@ export default class extends Controller {
   {
  
     const myModal = this.element;
-    console.log(myModal)
 
     // Ẩn modal khi trang được tải lại hoặc rời khỏi trang
     window.addEventListener("beforeunload", function () {

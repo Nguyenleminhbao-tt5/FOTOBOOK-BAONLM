@@ -2,7 +2,12 @@
     <div class="cardImg d-none d-lg-block" >
         <div class="row h-100 w-100 no-margin">
             <div class="cardImg__left h-100 m-0 p-0 col-5" data-bs-target="#album_<%=album.id%>" data-bs-toggle="modal"> 
-                    <%= image_tag(album.list_image[0].url(:thumb2),class:'cardIMg__left-img h-100 w-100') %>
+                    <figure class="snip1150 navy cardIMg__left-img h-100 w-100 ">
+                        <img src="<%= album.list_image[0].url(:thumb2) %>" alt="sq-sample6" class="h-100 w-100"  />
+                        <figcaption>
+                            <h2>Album<span><%= album.list_image.size %></span></h2>
+                        </figcaption>
+                    </figure>
             </div>
             <div class="cardImg__right ps-4 position-relative col-7 pe-0">
                 <div class="cardImg__right-account my-2 d-flex justify-content-between align-items-center">
@@ -62,7 +67,12 @@
         <!-- Card image -->
         
         <div class="card-img-top" data-bs-target="#album_<%=album.id%>" data-bs-toggle="modal"  > 
-            <%= image_tag(album.list_image[0].url(:thumb2),class:'cardIMg__left-img h-100 w-100') %>
+            <figure class="snip1150 navy cardIMg__left-img h-100 w-100 ">
+                <img src="<%= album.list_image[0].url(:thumb2) %>" alt="sq-sample6" class="h-100 w-100"  />
+                <figcaption>
+                    <h2>Album<span><%= album.title %></span></h2>
+                </figcaption>
+            </figure>
         </div>
 
         <!-- Card content -->
@@ -86,7 +96,7 @@
                         <%= button_to 'follow', follows_path(user,'falseAlbum'),method: :post , class: 'cardImg__btn-follow  text-center' %>
                     <%end%>
                 </div>
-                <h4 class="card-title w-50 mb-3"><%= album.title %></h4>
+                <h4 class="card-title w-50 mt-1"><%= album.title %></h4>
 
             </div>
 
@@ -123,6 +133,7 @@
     </div>
     <!-- Card -->
 
+
     <!--Modal-->
     <div class="modal fade" id="album_<%=album.id%>" tabindex="-1"  aria-labelledby="exampleModalLabel" aria-hidden="true">
         <div class="modal-dialog  h-75 d-flex align-items-center justify-content-center">
@@ -133,13 +144,13 @@
             </div>
             <div class="modal-body h-90">
                 <div class="modal-body__img">
-                    <div id="carouselExampleIndicators" class="carousel slide w-100 h-100">
+                    <div id="albumSilde_<%=album.id%>" class="carousel slide w-100 h-100">
                         <div class="carousel-indicators">
                             <% album.list_image.each_with_index do |photo, index| %>
                                 <%if index == 0%>
-                                    <button type="button"  data-bs-target="#carouselExampleIndicators" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+                                    <button type="button"  data-bs-target="#albumSilde_<%=album.id%>" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
                                 <%else%>
-                                    <button type="button"  data-bs-target="#carouselExampleIndicators" data-bs-slide-to="<%=index%>" class="active" aria-current="true" aria-label="Slide <%= index +1 %>"></button>
+                                    <button type="button"  data-bs-target="#albumSilde_<%=album.id%>" data-bs-slide-to="<%=index%>" class="active" aria-current="true" aria-label="Slide <%= index +1 %>"></button>
                                 <%end%>
 
                             <%end%>
@@ -157,11 +168,11 @@
                                 <%end%>
                             <%end%>
                         </div>
-                        <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="prev">
+                        <button class="carousel-control-prev" type="button" data-bs-target="#albumSilde_<%=album.id%>" data-bs-slide="prev">
                             <i class="fa-solid fa-chevron-left leftBtn" aria-hidden="true"></i>
                             <span class="visually-hidden">Previous</span>
                         </button>
-                        <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="next">
+                        <button class="carousel-control-next" type="button" data-bs-target="#albumSilde_<%=album.id%>" data-bs-slide="next">
                             <i class="fa-solid fa-chevron-right rightBtn" aria-hidden="true"></i>
                             <span class="visually-hidden">Next</span>
                         </button>

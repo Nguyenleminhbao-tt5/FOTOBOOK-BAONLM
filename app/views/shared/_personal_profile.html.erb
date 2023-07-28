@@ -4,7 +4,7 @@
         <% if current_user.avatar.present? %> 
             <%= image_tag(current_user.avatar.url, class: 'profileTopAvatar__img w-100 h-100 rounded-circle')  %>
         <%else%>
-            <img class="profileTopAvatar__img w-100 h-100 rounded-circle" src="https://taimienphi.vn/tmp/cf/aut/anh-gai-xinh-1.jpg" alt=""/>
+            <img class="profileTopAvatar__img w-100 h-100 rounded-circle" src="https://i.pinimg.com/originals/aa/be/6d/aabe6d6db5e5f569e69e56e851eba8f0.gif" alt=""/>
         <%end%>
     </div>
     <div class="contentProfile__top-infor w-75 ms-4 d-flex flex-column justify-content-start position-relative">
@@ -15,24 +15,55 @@
         <%end%>
         <h1 class="profileTopInfor__name mt-3"><%= @infors[0].fullname %></h1>
         <div class="profileTopInfor__list d-flex list-unstyled align-items-center nav nav-pills nav-justified" >
-            <%= link_to photos_user_path(@infors[0]) , class:'profileTopInfor__list-item ele-active text-decoration-none', data: { controller: "toggle", action: "click->toggle#toggleProfile" }  do%>
-                <span class="profileTopInfor__list-item__amount"><%= @infors[1] %></span>
-                <span class="profileTopInfor__list-item__cate">PHOTOS</span>
+            <% if params[:action]=='tab_photos'%>
+                <%= link_to photos_user_path(@infors[0]) , class:"profileTopInfor__list-item  text-decoration-none ele-active "  do%>
+                    <span class="profileTopInfor__list-item__amount"><%= @infors[1] %></span>
+                    <span class="profileTopInfor__list-item__cate">PHOTOS</span>
+                <%end%>
+            <%else%>
+                <%= link_to photos_user_path(@infors[0]) , class:"profileTopInfor__list-item  text-decoration-none"  do%>
+                    <span class="profileTopInfor__list-item__amount"><%= @infors[1] %></span>
+                    <span class="profileTopInfor__list-item__cate">PHOTOS</span>
+                <%end%>
             <%end%>
+  
             <span class="arrow">  </span>
-            <%= link_to albums_user_path(@infors[0]) , class:'profileTopInfor__list-item text-decoration-none', data: { controller: "toggle", action: "click->toggle#toggleProfile" } do%>
-                <span class="profileTopInfor__list-item__amount"><%= @infors[2] %></span>
-                <span class="profileTopInfor__list-item__cate">ALBUMS</span>
+            <%if params[:action]=='tab_albums'%>
+                <%= link_to albums_user_path(@infors[0]) , class:'profileTopInfor__list-item text-decoration-none ele-active' do%>
+                    <span class="profileTopInfor__list-item__amount"><%= @infors[2] %></span>
+                    <span class="profileTopInfor__list-item__cate">ALBUMS</span>
+                <%end%>
+            <%else%>
+                <%= link_to albums_user_path(@infors[0]) , class:'profileTopInfor__list-item text-decoration-none' do%>
+                    <span class="profileTopInfor__list-item__amount"><%= @infors[2] %></span>
+                    <span class="profileTopInfor__list-item__cate">ALBUMS</span>
+                <%end%>
             <%end%>
             <span class="arrow"> </span>
-            <%= link_to followings_user_path(@infors[0]) , class:'profileTopInfor__list-item text-decoration-none', data: { controller: "toggle", action: "click->toggle#toggleProfile" } do%>
-                <span class="profileTopInfor__list-item__amount"><%= @infors[3] %></span>
-                <span class="profileTopInfor__list-item__cate">FOLLOWINGS</span>
+
+            <% if params[:action]=='tab_followings' %>
+                <%= link_to followings_user_path(@infors[0]) , class:'profileTopInfor__list-item text-decoration-none ele-active' do%>
+                    <span class="profileTopInfor__list-item__amount"><%= @infors[3] %></span>
+                    <span class="profileTopInfor__list-item__cate">FOLLOWINGS</span>
+                <%end%>
+            <%else%>
+                <%= link_to followings_user_path(@infors[0]) , class:'profileTopInfor__list-item text-decoration-none' do%>
+                    <span class="profileTopInfor__list-item__amount"><%= @infors[3] %></span>
+                    <span class="profileTopInfor__list-item__cate">FOLLOWINGS</span>
+                <%end%>
             <%end%>
             <span class="arrow">  </span>
-            <%= link_to followers_user_path(@infors[0]), class:'profileTopInfor__list-item text-decoration-none', data: { controller: "toggle", action: "click->toggle#toggleProfile" } do%>
-                <span class="profileTopInfor__list-item__amount"><%= @infors[4] %></span>
-                <span class="profileTopInfor__list-item__cate">FOLLOWERS</span>
+
+            <% if params[:action] == 'tab_followers' %>
+                <%= link_to followers_user_path(@infors[0]), class:'profileTopInfor__list-item text-decoration-none ele-active' do%>
+                    <span class="profileTopInfor__list-item__amount"><%= @infors[4] %></span>
+                    <span class="profileTopInfor__list-item__cate">FOLLOWERS</span>
+                <%end%>
+            <%else%>
+                <%= link_to followers_user_path(@infors[0]), class:'profileTopInfor__list-item text-decoration-none' do%>
+                    <span class="profileTopInfor__list-item__amount"><%= @infors[4] %></span>
+                    <span class="profileTopInfor__list-item__cate">FOLLOWERS</span>
+                <%end%>
             <%end%>
         </div>
     </div>

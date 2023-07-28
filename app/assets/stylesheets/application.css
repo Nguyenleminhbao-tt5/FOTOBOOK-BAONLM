@@ -117,6 +117,7 @@ body{
 
 .modal-title{
     word-break: break-all;
+    font-size: 33px;
 }
 .modal-dialog
 {

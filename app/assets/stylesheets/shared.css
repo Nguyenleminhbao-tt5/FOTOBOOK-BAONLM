@@ -104,6 +104,7 @@ transition: 0.4s;
     animation: show ease-in 0.1s;
     cursor: default;
     padding-bottom: 12px;
+    height: 350px;
 }
 .no-cart__img
 {
@@ -634,6 +635,9 @@ background-color: red;
     .headerRightAccount__name, .header__right-logout{
         font-size: 18px;
     }
+    figure.snip1150 figcaption h2 {
+        font-size: 40px;
+    }
  }
 
 /* Medium devices (tablets, 768px and up) */
@@ -673,6 +677,12 @@ background-color: red;
     .header__right{
         display: flex;
     }
+    .headerAdmin__left-logo {
+        font-size: 23px;
+    }
+    figure.snip1150 figcaption h2 {
+        font-size: 26px;
+    }
  }
 
 /* X-Large devices (large desktops, 1200px and up) */
@@ -701,6 +711,9 @@ background-color: red;
         border-radius: 10px;
         position: relative;
     }
+    .headerAdmin__left-logo {
+        font-size: 25px;
+    }
     
 }
 
@@ -718,3 +731,4 @@ background-color: red;
     }
 
 }
+
